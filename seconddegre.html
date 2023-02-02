@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="secondcss.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <title>seconddegre</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand bg-primary bg-gradient p-1 rounded-3 text-light" href="#">Mathligne</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Equations
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">First degré</a></li>
+                      <li><a class="dropdown-item" href="#">Second degré</a></li>
+                      <li><a class="dropdown-item" href="#">Troisième degré</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Fractions
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Ordonner des fractions</a></li>
+                      <li><a class="dropdown-item" href="#">Dénominateur commun</a></li>
+                      <li><a class="dropdown-item" href="#">opérations sur les fractions</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Trigonométrie
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Fonctions trigonométriques inversé</a></li>
+                      <li><a class="dropdown-item" href="#">Expression trigonométrique</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Matrice
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Déterminant d'une matrice</a></li>
+                      <li><a class="dropdown-item" href="#">Opérations sur les matrices</a></li>
+                      <li><a class="dropdown-item" href="#">Inverse d'une matrice</a></li>
+                      <li><a class="dropdown-item" href="#">Matrice adjointe</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Vecteur
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Calculs sur un vecteur</a></li>
+                      <li><a class="dropdown-item" href="#">Calculs sur deux vecteurs</a></li>
+                      <li><a class="dropdown-item" href="#">Inverse d'une matrice</a></li>
+                      <li><a class="dropdown-item" href="#">Matrice adjointe</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    
+    <form action="" method="" class="container" name="formulaire">
+        <h1>Second degre</h1>
+        <div class="form-group">
+            <input type="text" name="a" id="putA" required placeholder="Valeur de A">
+        </div>
+        <div class="form-group">
+            <input type="text" name="b" id="putB" required placeholder="Valeur de B">
+        </div>
+        <div class="form-group">
+            <input type="text" name="c" id="putC" required placeholder="Valeur de C">
+        </div>
+        <div id="calculer">
+            <button type="button" onclick="delta();">Resultat</button>
+            <button type="reset">Effacer</button>
+            <span id="messageerreur"></span>
+        </div>
+        <div class="form-group">
+            <input type="text" name="c" id="resultat" required>
+        </div>
+    </form>
+    <script>
+            function delta(){
+
+                //Recuperer la valeur d'un input
+                let a = document.getElementById("putA").value;
+                let b = document.getElementById("putB").value;
+                let c = document.getElementById("putC").value;
+                let delta= ((b*b) -(4*a*c));
+                if ((!isNaN(a) && a !="") && (!isNaN(b) && b !="") && (!isNaN(c) && c !=""))
+                {
+                    if (delta < 0){
+                        document.formulaire.resultat.value = "Pas de solution";
+                    }else if (delta > 0){
+                        document.formulaire.resultat.value ="X1= "+ (-b-delta)/(2*a) +" et "+ " X2= " + (-b+delta)/(2*a);
+                    }else{
+                        document.formulaire.resultat.value ="X1=X2= " + (-b/(2*a));
+                    }
+                }else{
+                    messageerreur.style.color="#FF0000"
+                    messageerreur.innerText = "Veillez saisir les valeurs numeriques";
+                }
+                
+            }
+    </script>
+    <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+    <!-- <script src="seconddegre.js"></script> -->
+    <!-- <script src="functiondelta.js"></script> -->
+</body>
+</html>
