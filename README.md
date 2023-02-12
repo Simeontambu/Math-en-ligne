@@ -11,5 +11,5 @@ Cette application Web va résoudre avec le temps quelques équations mathématiq
 5.	Matrice et vecteur. 
 
 Jusque-là cette application résout uniquement l’équation du second degré.
-Les technologies que j’ai utilisées dans la conception de cette application Web s’inscrive dans le cadre de mon apprentissage continuelle de la programmation.
+Les technologies que j’ai utilisées dans la conception de cette application Web : HTML,CSS, SCSS, JS.
 
