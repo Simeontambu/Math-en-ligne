@@ -1,0 +1,22 @@
+{
+  "name": "seconddegre",
+  "version": "1.0.0",
+  "description": "Résolution des équations en ligne",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Simeontambu/Math-en-ligne.git"
+  },
+  "author": "simeontambu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Simeontambu/Math-en-ligne/issues"
+  },
+  "homepage": "https://github.com/Simeontambu/Math-en-ligne#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  }
+}
